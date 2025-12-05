@@ -15,7 +15,7 @@ $font-family: 'Segoe UI', Arial, sans-serif;
 $border-radius: 8px;
 $transition: all 0.2s ease;
 
-// ─── МИКСИНЫ ────────────────────────────────────────────────
+
 @mixin flex-center {
     display: flex;
     justify-content: space-between;
@@ -31,14 +31,14 @@ $transition: all 0.2s ease;
     }
 }
 
-// ─── БАЗОВЫЕ СТИЛИ ──────────────────────────────────────────
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-// Групповые селекторы
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     color: map-get($colors, text);
@@ -60,14 +60,14 @@ header, main, footer {
     width: 100%;
 }
 
-// ─── КОНТЕЙНЕР ──────────────────────────────────────────────
+
 .cont {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-// ─── ШАПКА ──────────────────────────────────────────────────
+
 .logo {
     font-size: 20px;
     font-weight: bold;
@@ -102,7 +102,7 @@ header {
     }
 }
 
-// ─── ЗАГОЛОВКИ ──────────────────────────────────────────────
+
 .title {
     font-size: 20px;
     margin-bottom: 20px;
@@ -128,7 +128,7 @@ header {
     }
 }
 
-// ─── СЕКЦИИ ─────────────────────────────────────────────────
+
 #news { background-color: rgba(99, 102, 241, 0.05); padding: 20px 0; }
 #rpg { background-color: rgba(16, 185, 128, 0.05); }
 #indie { background-color: rgba(245, 158, 11, 0.05); }
@@ -138,7 +138,7 @@ header {
     margin: 30px 0;
 }
 
-// ─── ОСНОВНОЙ КОНТЕНТ ───────────────────────────────────────
+
 main {
     padding: 30px 0;
 }
@@ -178,7 +178,7 @@ article {
     }
 }
 
-// ─── МЕДИАПЛЕЕРЫ ────────────────────────────────────────────
+
 .player {
     margin-top: 10px;
 }
@@ -197,7 +197,7 @@ article {
     border: none;
 }
 
-// ─── ФОРМА ──────────────────────────────────────────────────
+
 .newform {
     background-color: map-get($colors, card-bg);
     padding: 25px;
@@ -234,7 +234,7 @@ select {
     }
 }
 
-// ─── КНОПКИ ─────────────────────────────────────────────────
+
 button {
     background-color: map-get($colors, primary);
     color: white;
@@ -254,7 +254,7 @@ button {
     }
 }
 
-// ─── КАРТОЧКИ ИГР (GRID + FLEXBOX) ──────────────────────────
+
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -315,7 +315,7 @@ button {
     }
 }
 
-// ─── ПОДВАЛ ─────────────────────────────────────────────────
+
 footer {
     background-color: map-get($colors, darker);
     padding: 20px 0;
@@ -329,7 +329,7 @@ footer {
     }
 }
 
-// ─── АДАПТИВНОСТЬ ───────────────────────────────────────────
+
 @media (max-width: 768px) {
     .cont { padding: 0 15px; }
     main { padding: 20px 0; }

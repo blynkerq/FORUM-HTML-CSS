@@ -1,0 +1,338 @@
+$colors: (
+    dark: #121227,
+    darker: #0d0d1a,
+    card-bg: #1a1a2e,
+    border: #2a2a40,
+    text: #e0e0ff,
+    text-secondary: #94a3b8,
+    primary: #6366f1,
+    success: #10b981,
+    warning: #f59e0b,
+    purple: #8b5cf6
+);
+
+$font-family: 'Segoe UI', Arial, sans-serif;
+$border-radius: 8px;
+$transition: all 0.2s ease;
+
+// ─── МИКСИНЫ ────────────────────────────────────────────────
+@mixin flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin card-hover {
+    transition: $transition;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        border-color: map-get($colors, primary);
+    }
+}
+
+// ─── БАЗОВЫЕ СТИЛИ ──────────────────────────────────────────
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Групповые селекторы
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: map-get($colors, text);
+}
+
+p, span, small {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: map-get($colors, dark);
+    color: map-get($colors, text);
+    font-family: $font-family;
+    line-height: 1.6;
+}
+
+header, main, footer {
+    width: 100%;
+}
+
+// ─── КОНТЕЙНЕР ──────────────────────────────────────────────
+.cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// ─── ШАПКА ──────────────────────────────────────────────────
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: map-get($colors, primary);
+    
+    &::before {
+        content: "🎮 ";
+    }
+}
+
+header {
+    background-color: map-get($colors, darker);
+    padding: 15px 0;
+    border-bottom: 1px solid map-get($colors, border);
+    @include flex-center;
+    
+    a {
+        color: #b3b3cc;
+        text-decoration: none;
+        font-size: 14px;
+        
+        &:hover {
+            color: map-get($colors, text);
+            text-decoration: underline;
+        }
+    }
+    
+    nav > ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+}
+
+// ─── ЗАГОЛОВКИ ──────────────────────────────────────────────
+.title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    color: map-get($colors, text);
+    font-weight: bold;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 4px;
+        height: 20px;
+        background-color: map-get($colors, primary);
+    }
+    
+    &::after {
+        content: " 🎮";
+        color: map-get($colors, primary);
+        margin-left: 8px;
+    }
+}
+
+// ─── СЕКЦИИ ─────────────────────────────────────────────────
+#news { background-color: rgba(99, 102, 241, 0.05); padding: 20px 0; }
+#rpg { background-color: rgba(16, 185, 128, 0.05); }
+#indie { background-color: rgba(245, 158, 11, 0.05); }
+#games { 
+    background-color: rgba(139, 92, 246, 0.05); 
+    padding: 30px 0;
+    margin: 30px 0;
+}
+
+// ─── ОСНОВНОЙ КОНТЕНТ ───────────────────────────────────────
+main {
+    padding: 30px 0;
+}
+
+.discus {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    h2 + & {
+        margin-top: 15px;
+    }
+}
+
+article {
+    background-color: map-get($colors, card-bg);
+    padding: 20px;
+    border-radius: $border-radius;
+    border: 1px solid map-get($colors, border);
+    margin-bottom: 20px;
+    
+    &:nth-child(odd) {
+        background-color: #1c1c2f;
+    }
+    
+    h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: map-get($colors, text);
+        font-weight: bold;
+    }
+    
+    p:not(.intro) {
+        color: map-get($colors, text-secondary);
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+// ─── МЕДИАПЛЕЕРЫ ────────────────────────────────────────────
+.player {
+    margin-top: 10px;
+}
+
+.video-player {
+    width: 100%;
+    height: 360px;
+    background-color: map-get($colors, darker);
+    border: none;
+}
+
+.audio-player {
+    width: 100%;
+    height: 56px;
+    background-color: map-get($colors, darker);
+    border: none;
+}
+
+// ─── ФОРМА ──────────────────────────────────────────────────
+.newform {
+    background-color: map-get($colors, card-bg);
+    padding: 25px;
+    border-radius: $border-radius;
+    border: 1px solid map-get($colors, border);
+}
+
+.form {
+    margin-bottom: 20px;
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: map-get($colors, text);
+        font-weight: bold;
+    }
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    background-color: #0f172a;
+    color: map-get($colors, text);
+    font-size: 14px;
+    
+    &:focus {
+        outline: none;
+        border-color: map-get($colors, primary);
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+}
+
+// ─── КНОПКИ ─────────────────────────────────────────────────
+button {
+    background-color: map-get($colors, primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    $transition: $transition;
+    
+    &:active {
+        transform: translateY(1px);
+    }
+    
+    &:hover {
+        background-color: #4f46e5;
+    }
+}
+
+// ─── КАРТОЧКИ ИГР (GRID + FLEXBOX) ──────────────────────────
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.game-card {
+    background-color: map-get($colors, card-bg);
+    border-radius: 12px;
+    border: 1px solid map-get($colors, border);
+    overflow: hidden;
+    @include card-hover;
+    display: flex;
+    flex-direction: column;
+    
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    h3 {
+        font-size: 18px;
+        margin: 15px 15px 10px;
+        color: map-get($colors, text);
+    }
+    
+    .genre {
+        color: map-get($colors, primary);
+        font-size: 13px;
+        margin: 0 15px 10px;
+        font-weight: 500;
+    }
+    
+    .price {
+        color: map-get($colors, success);
+        font-weight: bold;
+        margin: 0 15px 15px;
+        font-size: 15px;
+    }
+    
+    .btn-buy {
+        background-color: map-get($colors, primary);
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 15px 15px;
+        transition: background-color 0.2s;
+        
+        &:hover {
+            background-color: #4f46e5;
+        }
+    }
+}
+
+// ─── ПОДВАЛ ─────────────────────────────────────────────────
+footer {
+    background-color: map-get($colors, darker);
+    padding: 20px 0;
+    border-top: 1px solid map-get($colors, border);
+    margin-top: 40px;
+    text-align: center;
+    
+    p {
+        color: map-get($colors, text-secondary);
+        font-size: 14px;
+    }
+}
+
+// ─── АДАПТИВНОСТЬ ───────────────────────────────────────────
+@media (max-width: 768px) {
+    .cont { padding: 0 15px; }
+    main { padding: 20px 0; }
+    .video-player { height: 240px; }
+    .games-grid { grid-template-columns: 1fr; }
+}

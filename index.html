@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAFORUM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cont">
+            <div class="logo">ARAFORUM</div>
+            <nav>
+                <ul>
+                    <li><a href="#news">Новости</a></li>
+                    <li><a href="#games">Игры</a></li>
+                    <li><a href="#rpg">RPG</a></li>
+                    <li><a href="#indie">Инди</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cont">
+        <section id="news" class="news">
+            <h2 class="title">Новости игр</h2>
+            <div class="discus">
+                <article>
+                    <h3>Вышел новый трейлер Cyberpunk 2077: Phantom Liberty</h3>
+                    <p>Компания CD Project RED анонсировала трейлер дополнения</p>
+                    <div class="player">
+                        <video controls width="100%" height="360" class="video-player" poster="/img/i.webp">
+                            <source src="/img/ae86b-17140297444344-1920.webp" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Официальный саундтрек к игре The Witcher 3: Wild Hunt</h3>
+                    <p>Насладитесь саундтреком великолепной игры</p>
+                    <div class="player">
+                        <audio controls class="audio-player">
+                            <source src="/audio/witcher3.mp3" type="audio/mpeg">
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        
+        <section id="games" class="games">
+            <h2 class="title">Популярные игры</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="/img/cyber.jpg" alt="Cyberpunk 2077">
+                    <h3>Cyberpunk 2077</h3>
+                    <p class="genre">Экшен / RPG</p>
+                    <p class="price">От 1999 ₽</p>
+                    <button class="btn-buy">Подробнее</button>
+                </div>
+                <div class="game-card">
+                    <img src="/img/elden.jpg" alt="Elden Ring">
+                    <h3>Elden Ring</h3>
+                    <p class="genre">RPG / Экшен</p>
+                    <p class="price">От 2499 ₽</p>
+                    <button class="btn-buy">Подробнее</button>
+                </div>
+                <div class="game-card">
+                    <img src="/img/stal.jpg" alt="S.T.A.L.K.E.R. 2">
+                    <h3>S.T.A.L.K.E.R. 2</h3>
+                    <p class="genre">Шутер / RPG</p>
+                    <p class="price">Предзаказ</p>
+                    <button class="btn-buy">Подробнее</button>
+                </div>
+                <div class="game-card">
+                    <img src="/img/hades.jpg" alt="Hades II">
+                    <h3>Hades II</h3>
+                    <p class="genre">Инди / Экшен</p>
+                    <p class="price">Ранний доступ</p>
+                    <button class="btn-buy">Подробнее</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="rpg" class="rpg">
+            <h2 class="title">Ролевые игры</h2>
+            <div class="discus">
+                <article>
+                    <h3>Обсуждение Elden Ring: Лучшие билды 2025</h3>
+                    <p>Пользователь Anaconda: Две удара два дырки два смерти</p>
+                </article>
+
+                <article>
+                    <h3>Саундтрек из S.T.A.L.K.E.R.: Call of Pripyat</h3>
+                    <p>Проникнитесь атмосферой постапокалипсиса. Послушайте и прочувствуйте жуткую атмосферу игры</p>
+                    <div class="player">
+                        <audio controls class="audio-player">
+                            <source src="/audio/stalker.mp3" type="audio/mpeg">
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="indie" class="indie">
+            <h2 class="title">Инди-игры</h2>
+            <div class="discus">
+                <article>
+                    <h3>Новый геймплейный ролик Hades II</h3>
+                    <p>Supergiant Games показали свежее геймплейное видео.</p>
+                    <div class="player">
+                        <video controls width="100%" height="360" class="video-player" poster="/img/hades.jpg">
+                            <source src="/video/hades2.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="newtopic">
+            <h2 class="title">Создать новую тему</h2>
+            <form class="newform">
+                <div class="form">
+                    <label for="topictitle">Заголовок темы:</label>
+                    <input type="text" id="topictitle" name="topictitle" placeholder="Введите заголовок">
+                </div>
+                <div class="form">
+                    <label for="topicforum">Форум:</label>
+                    <select id="topicforum" name="topicforum">
+                        <option value="action">Экшен-игры</option>
+                        <option value="rpg">Ролевые игры</option>
+                        <option value="strategy">Стратегии</option>
+                        <option value="indie">Инди-игры</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="topicmessage">Сообщение:</label>
+                    <textarea id="topicmessage" name="topicmessage" rows="7" placeholder="Напишите ваше сообщение"></textarea>
+                </div>
+                <button type="submit">Опубликовать тему</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="cont">
+            <p>&copy; 2024 ARAFORUM. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
